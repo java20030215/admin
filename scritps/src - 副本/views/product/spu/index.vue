@@ -14,7 +14,7 @@
                     <el-table-column label="SPU描述" prop="description" show-overflow-tooltip></el-table-column>
                     <el-table-column label="SPU操作">
                         <!-- row:即为已有的SPU对象 -->
-                        <template #="{ row, $index }">
+                        <template #default="{ row, $index }">
                             <el-button type="primary" size="small" icon="Plus" title="添加SKU"></el-button>
                             <el-button type="primary" size="small" icon="Edit" title="修改SPU"
                                 @click="updateSpu(row)"></el-button>

@@ -39,13 +39,13 @@
       <el-table border :data="imgArr" ref="table">
         <el-table-column type="selection" width="80px" align="center"></el-table-column>
         <el-table-column label="图片">
-          <template #="{ row, $index }">
+          <template #default="{ row }">
             <img :src="row.imgUrl" alt="" style="width: 100px; height: 100px" />
           </template>
         </el-table-column>
         <el-table-column label="名称" prop="imgName"></el-table-column>
         <el-table-column label="操作">
-          <template #="{ row, $index }">
+          <template #default="{ row }">
             <el-button type="primary" size="small" @click="handler(row)">设置默认</el-button>
           </template>
         </el-table-column>

@@ -5,14 +5,14 @@
       <el-table-column label="名称" show-overflow-tooltip width="150px" prop="skuName"></el-table-column>
       <el-table-column label="描述" show-overflow-tooltip width="150px" prop="skuDesc"></el-table-column>
       <el-table-column label="图片" width="150px">
-        <template #="{ row, $index }">
+        <template #default="{ row, $index }">
           <img :src="row.skuDefaultImg" alt="" style="width: 100px; height: 100px" />
         </template>
       </el-table-column>
       <el-table-column label="重量" width="150px" prop="weight"></el-table-column>
       <el-table-column label="价格" width="150px" prop="price"></el-table-column>
       <el-table-column label="操作" width="250px" fixed="right">
-        <template #="{ row, $index }">
+        <template #default="{ row, $index }">
           <el-button type="primary" size="small" :icon="row.isSale == 1 ? 'Bottom' : 'Top'" @click="updateSale(row)"></el-button>
           <el-button type="primary" size="small" icon="Edit" @click="updateSku"></el-button>
           <el-button type="primary" size="small" icon="InfoFilled" @click="findSku(row)"></el-button>

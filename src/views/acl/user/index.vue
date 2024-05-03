@@ -24,7 +24,7 @@
       <el-table-column label="创建时间" align="center" prop="createTime" show-overflow-tooltip></el-table-column>
       <el-table-column label="更新时间" align="center" prop="updateTime" show-overflow-tooltip></el-table-column>
       <el-table-column label="操作" width="300px" align="center">
-        <template #="{ row, $index }">
+        <template #default="{ row, $index }">
           <el-button type="primary" size="small" icon="User" @click="setRole(row)">分配角色</el-button>
           <el-button type="primary" size="small" icon="Edit" @click="updateUser(row)">编辑</el-button>
           <el-popconfirm :title="`你确定要删除${row.username}?`" width="260px" @confirm="deleteUser(row.id)">

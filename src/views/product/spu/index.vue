@@ -13,7 +13,7 @@
           <el-table-column label="SPU描述" prop="description" show-overflow-tooltip></el-table-column>
           <el-table-column label="SPU操作">
             <!-- row:即为已有的SPU对象 -->
-            <template #="{ row, $index }">
+            <template #default="{ row, $index }">
               <el-button type="primary" size="small" icon="Plus" title="添加SKU" @click="addSku(row)"></el-button>
               <el-button type="primary" size="small" icon="Edit" title="修改SPU" @click="updateSpu(row)"></el-button>
               <el-button type="primary" size="small" icon="View" title="查看SKU列表" @click="findSku(row)"></el-button>
@@ -48,7 +48,7 @@
           <el-table-column label="SKU价格" prop="price"></el-table-column>
           <el-table-column label="SKU重量" prop="weight"></el-table-column>
           <el-table-column label="SKU图片">
-            <template #="{ row, $index }">
+            <template #default="{ row, $index }">
               <img :src="row.skuDefaultImg" style="width: 100px; height: 100px" />
             </template>
           </el-table-column>

@@ -5,7 +5,7 @@
     </el-form-item>
     <el-form-item label="SPU品牌">
       <el-select v-model="SpuParams.tmId">
-        <el-option v-for="(item, index) in AllTradeMark" :key="item.id" :label="item.tmName" :value="item.id"></el-option>
+        <el-option v-for="(item, index) in allTradeMark" :key="item.id" :label="item.tmName" :value="item.id"></el-option>
       </el-select>
     </el-form-item>
     <el-form-item label="SPU描述">
@@ -44,8 +44,8 @@
         <el-table-column label="销售属性名字" width="120px" prop="saleAttrName"></el-table-column>
         <el-table-column label="销售属性值">
           <!-- row:即为当前SPU已有的销售属性对象 -->
-          <template #="{ row, $index }">
-            <el-tag style="margin: 0px 5px" @close="row.spuSaleAttrValueList.splice(index, 1)" v-for="(item, index) in row.spuSaleAttrValueList" :key="row.id" class="mx-1" closable>
+          <template #default="{ row, $index }">
+            <el-tag style="margin: 0px 5px" @close="row.spuSaleAttrValueList.splice(index, 1)" v-for="(item, index) in row.spuSaleAttrValueList" :key="item.id" class="mx-1" closable>
               {{ item.saleAttrValueName }}
             </el-tag>
             <el-input @blur="toLook(row)" v-model="row.saleAttrValue" v-if="row.flag == true" placeholder="请你输入属性值" size="small" style="width: 100px"></el-input>
@@ -53,7 +53,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" width="120px">
-          <template #="{ row, $index }">
+          <template #default="{ row, $index }">
             <el-button type="primary" size="small" icon="Delete" @click="saleAttr.splice($index, 1)"></el-button>
           </template>
         </el-table-column>
@@ -72,25 +72,25 @@ import { ref, computed } from 'vue';
 import { reqAllTradeMark, reqSpuImageList, reqSpuHasSaleAttr, reqAllSaleAttr, reqAddOrUpdateSpu } from '@/api/product/spu';
 import type { SaleAttrValue, HasSaleAttr, SaleAttr, SpuImg, Trademark, AllTradeMark, SpuHasImg, SaleAttrResponseData, HasSaleAttrResponseData } from '@/api/product/spu/type';
 import { ElMessage } from 'element-plus';
-let $emit = defineEmits(['changeScene']);
+const $emit = defineEmits(['changeScene']);
 //点击取消按钮:通知父组件切换场景为1,展示有的SPU的数据
 const cancel = () => {
   $emit('changeScene', { flag: 0, params: 'update' });
 };
 //存储已有的SPU这些数据
-let AllTradeMark = ref<Trademark[]>([]);
+const allTradeMark = ref<Trademark[]>([]);
 //商品图片
-let imgList = ref<SpuImg[]>([]);
+const imgList = ref<SpuImg[]>([]);
 //已有的SPU销售属性
-let saleAttr = ref<SaleAttr[]>([]);
+const saleAttr = ref<SaleAttr[]>([]);
 //全部销售属性
-let allSaleAttr = ref<HasSaleAttr[]>([]);
+const allSaleAttr = ref<HasSaleAttr[]>([]);
 //控制对话框的显示与隐藏
-let dialogVisible = ref<boolean>(false);
+const dialogVisible = ref<boolean>(false);
 //存储预览图片地址
-let dialogImageUrl = ref<string>('');
+const dialogImageUrl = ref<string>('');
 //存储已有的SPU对象
-let SpuParams = ref<SpuData>({
+const SpuParams = ref<SpuData>({
   category3Id: '', //收集三级分类的ID
   spuName: '', //SPU的名字
   description: '', //SPU的描述
@@ -99,22 +99,22 @@ let SpuParams = ref<SpuData>({
   spuSaleAttrList: []
 });
 //将来收集还未选择的销售属性的ID与属性值的名字
-let saleAttrIdAndValueName = ref<string>('');
+const saleAttrIdAndValueName = ref<string>('');
 //子组件书写一个方法
 const initHasSpuData = async (spu: SpuData) => {
   //存储已有的SPU对象,将来在模板中展示
   SpuParams.value = spu;
   //spu:即为父组件传递过来的已有的SPU对象[不完整]
   //获取全部品牌的数据
-  let result: AllTradeMark = await reqAllTradeMark();
+  const result: AllTradeMark = await reqAllTradeMark();
   //获取某一个品牌旗下全部售卖商品的图片
-  let result1: SpuHasImg = await reqSpuImageList(spu.id as number);
+  const result1: SpuHasImg = await reqSpuImageList(spu.id as number);
   //获取已有的SPU销售属性的数据
-  let result2: SaleAttrResponseData = await reqSpuHasSaleAttr(spu.id as number);
+  const result2: SaleAttrResponseData = await reqSpuHasSaleAttr(spu.id as number);
   //获取整个项目全部SPU的销售属性
-  let result3: HasSaleAttrResponseData = await reqAllSaleAttr();
+  const result3: HasSaleAttrResponseData = await reqAllSaleAttr();
   //存储全部品牌的数据
-  AllTradeMark.value = result.data;
+  allTradeMark.value = result.data;
   //SPU对应商品图片
   imgList.value = result1.data.map(item => {
     return {
@@ -159,10 +159,10 @@ const handlerUpload = (file: any) => {
 };
 
 //计算出当前SPU还未拥有的销售属性
-let unSelectSaleAttr = computed(() => {
+const unSelectSaleAttr = computed(() => {
   //全部销售属性:颜色、版本、尺码
   //已有的销售属性:颜色、版本
-  let unSelectArr = allSaleAttr.value.filter(item => {
+  const unSelectArr = allSaleAttr.value.filter(item => {
     return saleAttr.value.every(item1 => {
       return item.name != item1.saleAttrName;
     });
@@ -179,7 +179,7 @@ const addSaleAttr = () => {
     */
   const [baseSaleAttrId, saleAttrName] = saleAttrIdAndValueName.value.split(':');
   //准备一个新的销售属性对象:将来带给服务器即可
-  let newSaleAttr: SaleAttr = {
+  const newSaleAttr: SaleAttr = {
     baseSaleAttrId,
     saleAttrName,
     spuSaleAttrValueList: []
@@ -201,7 +201,7 @@ const toLook = (row: SaleAttr) => {
   //整理收集的属性的ID与属性值的名字
   const { baseSaleAttrId, saleAttrValue } = row;
   //整理成服务器需要的属性值形式
-  let newSaleAttrValue: SaleAttrValue = {
+  const newSaleAttrValue: SaleAttrValue = {
     baseSaleAttrId,
     saleAttrValueName: saleAttrValue as string
   };
@@ -215,7 +215,7 @@ const toLook = (row: SaleAttr) => {
     return;
   }
   //判断属性值是否在数组当中存在
-  let repeat = row.spuSaleAttrValueList.find(item => {
+  const repeat = row.spuSaleAttrValueList.find(item => {
     return item.saleAttrValueName == saleAttrValue;
   });
 
@@ -248,7 +248,7 @@ const save = async () => {
   });
   //2:整理销售属性的数据
   SpuParams.value.spuSaleAttrList = saleAttr.value;
-  let result = await reqAddOrUpdateSpu(SpuParams.value);
+  const result = await reqAddOrUpdateSpu(SpuParams.value);
   if (result.code == 200) {
     ElMessage({
       type: 'success',
@@ -286,10 +286,10 @@ const initAddSpu = async (c3Id: number | string) => {
   //存储三级分类的ID
   SpuParams.value.category3Id = c3Id;
   //获取全部品牌的数据
-  let result: AllTradeMark = await reqAllTradeMark();
-  let result1: HasSaleAttrResponseData = await reqAllSaleAttr();
+  const result: AllTradeMark = await reqAllTradeMark();
+  const result1: HasSaleAttrResponseData = await reqAllSaleAttr();
   //存储数据
-  AllTradeMark.value = result.data;
+  allTradeMark.value = result.data;
   allSaleAttr.value = result1.data;
 };
 //对外暴露

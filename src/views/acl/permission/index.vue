@@ -5,7 +5,7 @@
     <el-table-column label="修改时间" prop="updateTime"></el-table-column>
     <el-table-column label="操作">
       <!-- row:即为已有的菜单对象|按钮的对象的数据 -->
-      <template #="{ row, $index }">
+      <template #default="{ row, $index }">
         <el-button type="primary" @click="addPermisstion(row)" size="small" :disabled="row.level == 4 ? true : false">
           {{ row.level == 3 ? '添加功能' : '添加菜单' }}
         </el-button>

@@ -20,7 +20,7 @@
       <el-table-column label="更新时间" align="center" show-overflow-tooltip prop="updateTime"></el-table-column>
       <el-table-column label="操作" width="280px" align="center">
         <!-- row:已有的职位对象 -->
-        <template #="{ row, $index }">
+        <template #default="{ row, $index }">
           <el-button type="primary" size="small" icon="User" @click="setPermisstion(row)">分配权限</el-button>
           <el-button type="primary" size="small" icon="Edit" @click="updateRole(row)">编辑</el-button>
           <el-popconfirm :title="`你确定要删除${row.roleName}?`" width="260px" @confirm="removeRole(row.id)">

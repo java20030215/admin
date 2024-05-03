@@ -12,12 +12,12 @@
         <!-- table-column:默认展示数据用div -->
         <el-table-column label="品牌名称" prop="tmName"></el-table-column>
         <el-table-column label="品牌LOGO">
-          <template #="{ row, $index }">
+          <template #default="{ row, $index }">
             <img :src="row.logoUrl" style="width: 100px; height: 100px" />
           </template>
         </el-table-column>
         <el-table-column label="品牌操作">
-          <template #="{ row, $index }">
+          <template #default="{ row, $index }">
             <el-button type="primary" size="small" icon="Edit" @click="updateTrademark(row)"></el-button>
             <el-popconfirm :title="`您确定要删除${row.tmName}?`" width="250px" icon="Delete" @confirm="removeTradeMark(row.id)">
               <template #reference>
