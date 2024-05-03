@@ -1,6 +1,6 @@
-import pinia from '@/store'
-import useUserStore from '@/store/modules/user'
-const userStore = useUserStore(pinia)
+import pinia from '@/store';
+import useUserStore from '@/store/modules/user';
+const userStore = useUserStore(pinia);
 export const isHasButton = (app: any) => {
   //获取对应的用户仓库
   //全局自定义指令:实现按钮的权限
@@ -10,8 +10,8 @@ export const isHasButton = (app: any) => {
       //自定义指令右侧的数值:如果在用户信息buttons数组当中没有
       //从DOM树上干掉
       if (!userStore.buttons.includes(options.value)) {
-        el.parentNode.removeChild(el)
+        el.parentNode.removeChild(el);
       }
-    },
-  })
-}
+    }
+  });
+};

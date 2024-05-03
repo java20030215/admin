@@ -8,8 +8,8 @@ export const constantRoute = [
     meta: {
       title: '登录', //菜单标题
       hidden: true, //代表路由标题在菜单中是否隐藏  true:隐藏 false:不隐藏
-      icon: 'Promotion', //菜单文字左侧的图标,支持element-plus全部图标
-    },
+      icon: 'Promotion' //菜单文字左侧的图标,支持element-plus全部图标
+    }
   },
   {
     //登录成功以后展示数据的路由
@@ -19,7 +19,7 @@ export const constantRoute = [
     meta: {
       title: '',
       hidden: false,
-      icon: '',
+      icon: ''
     },
     redirect: '/home',
     children: [
@@ -29,10 +29,10 @@ export const constantRoute = [
         meta: {
           title: '首页',
           hidden: false,
-          icon: 'HomeFilled',
-        },
-      },
-    ],
+          icon: 'HomeFilled'
+        }
+      }
+    ]
   },
   {
     //404
@@ -42,8 +42,8 @@ export const constantRoute = [
     meta: {
       title: '404',
       hidden: true,
-      icon: 'DocumentDelete',
-    },
+      icon: 'DocumentDelete'
+    }
   },
   {
     path: '/screen',
@@ -52,10 +52,10 @@ export const constantRoute = [
     meta: {
       hidden: false,
       title: '数据大屏',
-      icon: 'Platform',
-    },
-  },
-]
+      icon: 'Platform'
+    }
+  }
+];
 
 //异步路由
 export const asnycRoute = [
@@ -65,7 +65,7 @@ export const asnycRoute = [
     name: 'Acl',
     meta: {
       title: '权限管理',
-      icon: 'Lock',
+      icon: 'Lock'
     },
     redirect: '/acl/user',
     children: [
@@ -75,8 +75,8 @@ export const asnycRoute = [
         name: 'User',
         meta: {
           title: '用户管理',
-          icon: 'User',
-        },
+          icon: 'User'
+        }
       },
       {
         path: '/acl/role',
@@ -84,8 +84,8 @@ export const asnycRoute = [
         name: 'Role',
         meta: {
           title: '角色管理',
-          icon: 'UserFilled',
-        },
+          icon: 'UserFilled'
+        }
       },
       {
         path: '/acl/permission',
@@ -93,10 +93,10 @@ export const asnycRoute = [
         name: 'Permission',
         meta: {
           title: '菜单管理',
-          icon: 'Monitor',
-        },
-      },
-    ],
+          icon: 'Monitor'
+        }
+      }
+    ]
   },
   {
     path: '/product',
@@ -104,7 +104,7 @@ export const asnycRoute = [
     name: 'Product',
     meta: {
       title: '商品管理',
-      icon: 'Goods',
+      icon: 'Goods'
     },
     redirect: '/product/trademark',
     children: [
@@ -114,8 +114,8 @@ export const asnycRoute = [
         name: 'Trademark',
         meta: {
           title: '品牌管理',
-          icon: 'ShoppingCartFull',
-        },
+          icon: 'ShoppingCartFull'
+        }
       },
       {
         path: '/product/attr',
@@ -123,8 +123,8 @@ export const asnycRoute = [
         name: 'Attr',
         meta: {
           title: '属性管理',
-          icon: 'ChromeFilled',
-        },
+          icon: 'ChromeFilled'
+        }
       },
       {
         path: '/product/spu',
@@ -132,8 +132,8 @@ export const asnycRoute = [
         name: 'Spu',
         meta: {
           title: 'SPU管理',
-          icon: 'Calendar',
-        },
+          icon: 'Calendar'
+        }
       },
       {
         path: '/product/sku',
@@ -141,12 +141,12 @@ export const asnycRoute = [
         name: 'Sku',
         meta: {
           title: 'SKU管理',
-          icon: 'Orange',
-        },
-      },
-    ],
-  },
-]
+          icon: 'Orange'
+        }
+      }
+    ]
+  }
+];
 
 //任意路由
 export const anyRoute = {
@@ -157,6 +157,6 @@ export const anyRoute = {
   meta: {
     title: '任意路由',
     hidden: true,
-    icon: 'DataLine',
-  },
-}
+    icon: 'DataLine'
+  }
+};

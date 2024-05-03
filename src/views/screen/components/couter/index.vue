@@ -2,12 +2,12 @@
   <div class="box8">
     <div class="title">
       <p>数据统计</p>
-      <img src="../../images/dataScreen-title.png" alt="">
+      <img src="../../images/dataScreen-title.png" alt="" />
     </div>
     <div class="charts" ref="charts"></div>
   </div>
 </template>
-  
+
 <script setup lang="ts">
 import * as echarts from 'echarts';
 import { ref, onMounted } from 'vue';
@@ -20,8 +20,8 @@ onMounted(() => {
   let option = {
     title: {
       text: '游客消费统计',
-      textStyle:{
-        color:'white'
+      textStyle: {
+        color: 'white'
       }
     },
     radar: {
@@ -53,10 +53,10 @@ onMounted(() => {
     ]
   };
   //设置配置项
-  mychart.setOption(option)
-})
+  mychart.setOption(option);
+});
 </script>
-  
+
 <style scoped lang="scss">
 .box8 {
   width: 100%;
@@ -75,6 +75,5 @@ onMounted(() => {
   .charts {
     height: calc(100% - 30px);
   }
-
 }
 </style>

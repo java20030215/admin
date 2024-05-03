@@ -2,7 +2,7 @@
   <div class="box7">
     <div class="title">
       <p>年度游客量对比</p>
-      <img src="../../images/dataScreen-title.png" alt="">
+      <img src="../../images/dataScreen-title.png" alt="" />
     </div>
     <div class="charts" ref="charts"></div>
   </div>
@@ -28,7 +28,7 @@ onMounted(() => {
     },
     xAxis: {
       type: 'category',
-      show: true,
+      show: true
     },
     yAxis: {
       show: false
@@ -59,18 +59,22 @@ onMounted(() => {
           y: 0,
           x2: 0,
           y2: 1,
-          colorStops: [{
-            offset: 0, color: 'red' // 0% 处的颜色
-          }, {
-            offset: 1, color: 'blue' // 100% 处的颜色
-          }],
+          colorStops: [
+            {
+              offset: 0,
+              color: 'red' // 0% 处的颜色
+            },
+            {
+              offset: 1,
+              color: 'blue' // 100% 处的颜色
+            }
+          ],
           global: false // 缺省为 false
         }
       }
     }
-
-  })
-})
+  });
+});
 </script>
 
 <style scoped lang="scss">
@@ -91,6 +95,5 @@ onMounted(() => {
   .charts {
     height: calc(100% - 30px);
   }
-
 }
 </style>

@@ -2,22 +2,21 @@
   <div class="box1">
     <div class="title">
       <p>男女比例</p>
-      <img src="../../images/dataScreen-title.png" alt="">
+      <img src="../../images/dataScreen-title.png" alt="" />
     </div>
     <div class="sex">
       <div class="man">
-        <img src="../../images/man.png" alt="">
+        <img src="../../images/man.png" alt="" />
       </div>
       <div class="women">
-        <img src="../../images/woman.png" alt="">
+        <img src="../../images/woman.png" alt="" />
       </div>
-
     </div>
     <div class="rate">
       <p>男士58%</p>
       <p>女士42%</p>
     </div>
-    <div class="charts" ref='charts'></div>
+    <div class="charts" ref="charts"></div>
   </div>
 </template>
 
@@ -33,8 +32,9 @@ onMounted(() => {
   mycharts.setOption({
     //组件标题
     title: {
-      text: '男女比例',//主标题
-      textStyle: {//主标题颜色
+      text: '男女比例', //主标题
+      textStyle: {
+        //主标题颜色
         color: 'skyblue'
       },
       left: '40%'
@@ -59,8 +59,7 @@ onMounted(() => {
           color: 'skyblue',
           borderRadius: 20
         }
-      }
-      ,
+      },
       {
         type: 'bar',
         data: [100],
@@ -80,9 +79,7 @@ onMounted(() => {
       bottom: 0
     }
   });
-})
-
-
+});
 </script>
 
 <style scoped lang="scss">
@@ -125,7 +122,6 @@ onMounted(() => {
       justify-content: center;
       align-items: center;
     }
-
   }
 
   .rate {
