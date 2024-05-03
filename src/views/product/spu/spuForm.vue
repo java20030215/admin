@@ -39,13 +39,13 @@
       </el-select>
       <el-button @click="addSaleAttr" :disabled="saleAttrIdAndValueName ? false : true" style="margin-left: 10px" type="primary" size="default" icon="Plus">添加属性</el-button>
       <!-- table展示销售属性与属性值的地方 -->
-      <el-table border style="margin: 10px 0px" :data="saleAttr">
+      <el-table border style="margin: 10px 0" :data="saleAttr">
         <el-table-column label="序号" type="index" align="center" width="80px"></el-table-column>
         <el-table-column label="销售属性名字" width="120px" prop="saleAttrName"></el-table-column>
         <el-table-column label="销售属性值">
           <!-- row:即为当前SPU已有的销售属性对象 -->
           <template #default="{ row, $index }">
-            <el-tag style="margin: 0px 5px" @close="row.spuSaleAttrValueList.splice(index, 1)" v-for="(item, index) in row.spuSaleAttrValueList" :key="item.id" class="mx-1" closable>
+            <el-tag style="margin: 0 5px" @close="row.spuSaleAttrValueList.splice(index, 1)" v-for="(item, index) in row.spuSaleAttrValueList" :key="item.id" class="mx-1" closable>
               {{ item.saleAttrValueName }}
             </el-tag>
             <el-input @blur="toLook(row)" v-model="row.saleAttrValue" v-if="row.flag == true" placeholder="请你输入属性值" size="small" style="width: 100px"></el-input>

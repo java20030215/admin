@@ -59,9 +59,9 @@ export default {
   height: 100vh;
 
   .layout_slider {
-    color: white;
     width: $base-menu-width;
     height: 100vh;
+    color: white;
     background: $base-menu-background;
     transition: all 0.3s;
 
@@ -77,30 +77,31 @@ export default {
 
   .layout_tabbar {
     position: fixed;
+    top: 0;
+    left: $base-menu-width;
     width: calc(100% - $base-menu-width);
     height: $base-tabbar-height;
-    top: 0px;
-    left: $base-menu-width;
     transition: all 0.3s;
+
     &.fold {
-      width: calc(100vw - $base-menu-min-width);
       left: $base-menu-min-width;
+      width: calc(100vw - $base-menu-min-width);
     }
   }
 
   .layout_main {
     position: absolute;
+    top: $base-tabbar-height;
+    left: $base-menu-width;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabbar-height);
-    left: $base-menu-width;
-    top: $base-tabbar-height;
     padding: 20px;
     overflow: auto;
     transition: all 0.3s;
 
     &.fold {
-      width: calc(100vw - $base-menu-min-width);
       left: $base-menu-min-width;
+      width: calc(100vw - $base-menu-min-width);
     }
   }
 }

@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-//@ts-expect-error
 import moment from 'moment';
 //点击首页按钮回到首页
 import { useRouter } from 'vue-router';
@@ -43,25 +42,25 @@ onBeforeUnmount(() => {
 
 <style scoped lang="scss">
 .top {
+  display: flex;
   width: 100%;
   height: 40px;
-  display: flex;
 
   .left {
     flex: 1.5;
-    background: url(../../images/dataScreen-header-left-bg.png) no-repeat;
+    background: url("../../images/dataScreen-header-left-bg.png") no-repeat;
     background-size: cover;
 
     .lbtn {
+      float: right;
       width: 150px;
       height: 40px;
-      float: right;
-      background: url(../../images/dataScreen-header-btn-bg-l.png) no-repeat;
-      background-size: 100% 100%;
-      text-align: center;
+      font-size: 20px;
       line-height: 40px;
       color: #29fcff;
-      font-size: 20px;
+      text-align: center;
+      background: url("../../images/dataScreen-header-btn-bg-l.png") no-repeat;
+      background-size: 100% 100%;
     }
   }
 
@@ -71,36 +70,36 @@ onBeforeUnmount(() => {
     .title {
       width: 100%;
       height: 74px;
-      background: url(../../images/dataScreen-header-center-bg.png) no-repeat;
-      background-size: 100% 100%;
-      text-align: center;
+      font-size: 30px;
       line-height: 74px;
       color: #29fcff;
-      font-size: 30px;
+      text-align: center;
+      background: url("../../images/dataScreen-header-center-bg.png") no-repeat;
+      background-size: 100% 100%;
     }
   }
 
   .right {
-    flex: 1.5;
-    background: url(../../images/dataScreen-header-left-bg.png) no-repeat;
-    background-size: cover;
     display: flex;
-    justify-content: space-between;
+    flex: 1.5;
     align-items: center;
+    justify-content: space-between;
+    background: url("../../images/dataScreen-header-left-bg.png") no-repeat;
+    background-size: cover;
 
     .rbtn {
       width: 150px;
       height: 40px;
-      background: url(../../images/dataScreen-header-btn-bg-r.png) no-repeat;
-      background-size: 100% 100%;
-      text-align: center;
       line-height: 40px;
       color: #29fcff;
+      text-align: center;
+      background: url("../../images/dataScreen-header-btn-bg-r.png") no-repeat;
+      background-size: 100% 100%;
     }
 
     .time {
-      color: #29fcff;
       font-size: 20px;
+      color: #29fcff;
     }
   }
 }

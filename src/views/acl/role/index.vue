@@ -10,9 +10,9 @@
       </el-form-item>
     </el-form>
   </el-card>
-  <el-card style="margin: 10px 0px">
+  <el-card style="margin: 10px 0">
     <el-button type="primary" size="default" icon="Plus" @click="addRole">添加职位</el-button>
-    <el-table border style="margin: 10px 0px" :data="allRole">
+    <el-table border style="margin: 10px 0" :data="allRole">
       <el-table-column type="index" align="center" label="#"></el-table-column>
       <el-table-column label="ID" align="center" prop="id"></el-table-column>
       <el-table-column label="职位名称" align="center" prop="roleName" show-overflow-tooltip></el-table-column>
@@ -261,8 +261,8 @@ const removeRole = async (id: number) => {
 <style scoped>
 .form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
 }
 </style>

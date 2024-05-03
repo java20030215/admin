@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <el-table border style="margin: 10px 0px" :data="skuArr">
+    <el-table border style="margin: 10px 0" :data="skuArr">
       <el-table-column label="序号" type="index" align="center" width="80px"></el-table-column>
       <el-table-column label="名称" show-overflow-tooltip width="150px" prop="skuName"></el-table-column>
       <el-table-column label="描述" show-overflow-tooltip width="150px" prop="skuDesc"></el-table-column>
@@ -41,31 +41,31 @@
         <h4>查看商品的详情</h4>
       </template>
       <template #default>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">名称</el-col>
           <el-col :span="18">{{ skuInfo.skuName }}</el-col>
         </el-row>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">描述</el-col>
           <el-col :span="18">{{ skuInfo.skuDesc }}</el-col>
         </el-row>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">价格</el-col>
           <el-col :span="18">{{ skuInfo.price }}</el-col>
         </el-row>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">平台属性</el-col>
           <el-col :span="18">
             <el-tag style="margin: 5px" v-for="item in skuInfo.skuAttrValueList" :key="item.id">{{ item.valueName }}</el-tag>
           </el-col>
         </el-row>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">销售属性</el-col>
           <el-col :span="18">
             <el-tag style="margin: 5px" v-for="item in skuInfo.skuSaleAttrValueList" :key="item.id">{{ item.saleAttrValueName }}</el-tag>
           </el-col>
         </el-row>
-        <el-row style="margin: 10px 0px">
+        <el-row style="margin: 10px 0">
           <el-col :span="6">商品图片</el-col>
           <el-col :span="18">
             <el-carousel :interval="4000" type="card" height="200px">
@@ -110,7 +110,7 @@ const getHasSku = async (pager = 1) => {
   }
 };
 //分页器下拉菜单发生变化触发
-const handler = (pageSizes: number) => {
+const handler = () => {
   getHasSku();
 };
 
@@ -165,11 +165,11 @@ const removeSku = async (id: number) => {
 
 <style scoped>
 .el-carousel__item h3 {
-  color: #475669;
-  opacity: 0.75;
-  line-height: 200px;
   margin: 0;
+  line-height: 200px;
+  color: #475669;
   text-align: center;
+  opacity: 0.75;
 }
 
 .el-carousel__item:nth-child(2n) {

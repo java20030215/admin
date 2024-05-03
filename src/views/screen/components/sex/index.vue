@@ -86,16 +86,16 @@ onMounted(() => {
 .box1 {
   width: 100%;
   height: 100%;
-  background: url(../../images/dataScreen-main-cb.png) no-repeat;
+  margin: 20px 0;
+  background: url("../../images/dataScreen-main-cb.png") no-repeat;
   background-size: 100% 100%;
-  margin: 20px 0px;
 
   .title {
     margin-left: 20px;
 
     p {
-      color: white;
       font-size: 20px;
+      color: white;
     }
   }
 
@@ -104,23 +104,23 @@ onMounted(() => {
     justify-content: center;
 
     .man {
-      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 111px;
       height: 115px;
-      background: url(../../images/man-bg.png) no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 20px;
+      background: url("../../images/man-bg.png") no-repeat;
     }
 
     .women {
-      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 111px;
       height: 115px;
-      background: url(../../images/woman-bg.png) no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 20px;
+      background: url("../../images/woman-bg.png") no-repeat;
     }
   }
 

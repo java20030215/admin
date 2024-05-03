@@ -7,7 +7,7 @@
       <!-- table:---border:可以设置表格纵向是否有边框
                 table-column:---label:某一个列表 ---width:设置这列宽度 ---align:设置这一列对齐方式    
             -->
-      <el-table style="margin: 10px 0px" border :data="trademarkArr">
+      <el-table style="margin: 10px 0" border :data="trademarkArr">
         <el-table-column label="序号" width="80px" align="center" type="index"></el-table-column>
         <!-- table-column:默认展示数据用div -->
         <el-table-column label="品牌名称" prop="tmName"></el-table-column>
@@ -77,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { ElMessage, UploadProps, formEmits } from 'element-plus';
+import { ElMessage, UploadProps } from 'element-plus';
 //引入组合式API函数ref
 import { ref, onMounted, reactive, nextTick } from 'vue';
 import { reqHasTrademark, reqAddOrUpdateTrademark, reqDeleteTrademark } from '@/api/product/trademark';
@@ -211,7 +211,7 @@ const beforeAvatarUpload: UploadProps['beforeUpload'] = rawFile => {
   }
 };
 //图片上传成功钩子
-const handleAvatarSuccess: UploadProps['onSuccess'] = (response, uploadFile) => {
+const handleAvatarSuccess: UploadProps['onSuccess'] = response => {
   //response:即为当前这次上传图片post请求服务器返回的数据
   //收集上传图片的地址,添加一个新的品牌的时候带给服务器
   trademarkParams.logoUrl = response.data;
@@ -271,19 +271,19 @@ const removeTradeMark = async (id: number) => {
 </script>
 <style scoped>
 .avatar-uploader .avatar {
+  display: block;
   width: 178px;
   height: 178px;
-  display: block;
 }
 </style>
 
 <style>
 .avatar-uploader .el-upload {
-  border: 1px dashed var(--el-border-color);
-  border-radius: 6px;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  border: 1px dashed var(--el-border-color);
+  border-radius: 6px;
   transition: var(--el-transition-duration-fast);
 }
 
@@ -292,10 +292,10 @@ const removeTradeMark = async (id: number) => {
 }
 
 .el-icon.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
   width: 178px;
   height: 178px;
+  font-size: 28px;
+  color: #8c939d;
   text-align: center;
 }
 </style>

@@ -2,10 +2,10 @@
   <div>
     <!-- 三级分类全局组件 -->
     <Category :scene="scene" />
-    <el-card style="margin: 10px 0px">
+    <el-card style="margin: 10px 0">
       <div v-show="scene == 0">
         <el-button @click="addAttr" type="primary" size="default" icon="Plus" :disabled="categoryStore.c3Id ? false : true">添加属性</el-button>
-        <el-table border style="margin: 10px 0px" :data="attrArr">
+        <el-table border style="margin: 10px 0" :data="attrArr">
           <el-table-column label="序号" type="index" align="center" width="80px"></el-table-column>
           <el-table-column label="属性名称" width="120px" prop="attrName"></el-table-column>
           <el-table-column label="属性值名称">
@@ -38,7 +38,7 @@
         </el-form>
         <el-button @click="addAttrValue" :disabled="attrParams.attrName ? false : true" type="primary" size="default" icon="Plus">添加属性值</el-button>
         <el-button type="primary" size="default" @click="cancel">取消</el-button>
-        <el-table border style="margin: 10px 0px" :data="attrParams.attrValueList">
+        <el-table border style="margin: 10px 0" :data="attrParams.attrValueList">
           <el-table-column label="序号" width="80px" type="index" align="center"></el-table-column>
           <el-table-column label="属性值名称">
             <!-- row:即为当前属性值对象 -->

@@ -50,7 +50,7 @@ const goRoute = (vc: any) => {
 </script>
 <script lang="ts">
 export default {
-  name: 'Menu'
+  name: 'MenuDiv'
 };
 </script>
 

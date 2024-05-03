@@ -81,14 +81,14 @@ onMounted(() => {
 .box7 {
   width: 100%;
   height: 100%;
-  background: url(../../images/dataScreen-main-cb.png) no-repeat;
+  margin: 20px 0;
+  background: url("../../images/dataScreen-main-cb.png") no-repeat;
   background-size: 100% 100%;
-  margin: 20px 0px;
 
   .title {
     p {
-      color: white;
       font-size: 18px;
+      color: white;
     }
   }
 

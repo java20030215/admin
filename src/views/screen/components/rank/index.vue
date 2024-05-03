@@ -160,16 +160,16 @@ onMounted(() => {
 .box6 {
   width: 100%;
   height: 100%;
-  background: url(../../images/dataScreen-main-cb.png) no-repeat;
+  margin: 20px 0;
+  background: url("../../images/dataScreen-main-cb.png") no-repeat;
   background-size: 100% 100%;
-  margin: 20px 0px;
 
   .title {
     margin-left: 5px;
 
     p {
-      color: white;
       font-size: 20px;
+      color: white;
     }
   }
 

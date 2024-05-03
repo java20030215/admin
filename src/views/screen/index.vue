@@ -64,15 +64,15 @@ window.onresize = () => {
 .container {
   width: 100vw;
   height: 100vh;
-  background: url(./images/bg.png) no-repeat;
+  background: url("./images/bg.png") no-repeat;
   background-size: cover;
 
   .screen {
     position: fixed;
+    top: 50%;
+    left: 50%;
     width: 1920px;
     height: 1080px;
-    left: 50%;
-    top: 50%;
     transform-origin: left top;
 
     .top {
@@ -84,8 +84,8 @@ window.onresize = () => {
       display: flex;
 
       .right {
-        flex: 1;
         display: flex;
+        flex: 1;
         flex-direction: column;
         margin-left: 40px;
 
@@ -103,10 +103,10 @@ window.onresize = () => {
       }
 
       .left {
-        flex: 1;
-        height: 1040px;
         display: flex;
+        flex: 1;
         flex-direction: column;
+        height: 1040px;
 
         .tourist {
           flex: 1.2;
@@ -122,8 +122,8 @@ window.onresize = () => {
       }
 
       .center {
-        flex: 1.5;
         display: flex;
+        flex: 1.5;
         flex-direction: column;
 
         .map {

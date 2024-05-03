@@ -73,30 +73,30 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .box {
-  background: url(../../images/dataScreen-main-lb.png) no-repeat;
-  background-size: 100% 100%;
   margin-top: 10px;
+  background: url("../../images/dataScreen-main-lb.png") no-repeat;
+  background-size: 100% 100%;
 
   .top {
     margin-left: 20px;
 
     .title {
-      color: white;
       font-size: 20px;
+      color: white;
     }
 
     .bg {
       width: 68px;
       height: 7px;
-      background: url(../../images/dataScreen-title.png) no-repeat;
-      background-size: 100% 100%;
       margin-top: 10px;
+      background: url("../../images/dataScreen-title.png") no-repeat;
+      background-size: 100% 100%;
     }
 
     .right {
       float: right;
-      color: white;
       font-size: 20px;
+      color: white;
 
       span {
         color: yellowgreen;
@@ -105,18 +105,18 @@ onMounted(() => {
   }
 
   .number {
+    display: flex;
     padding: 10px;
     margin-top: 30px;
-    display: flex;
 
     span {
       flex: 1;
       height: 40px;
-      text-align: center;
       line-height: 40px;
-      background: url(../../images/total.png) no-repeat;
-      background-size: 100% 100%;
       color: #29fcff;
+      text-align: center;
+      background: url("../../images/total.png") no-repeat;
+      background-size: 100% 100%;
     }
   }
 

@@ -10,11 +10,11 @@
       </el-form-item>
     </el-form>
   </el-card>
-  <el-card style="margin: 10px 0px">
+  <el-card style="margin: 10px 0">
     <el-button type="primary" size="default" @click="addUser">添加用户</el-button>
     <el-button type="primary" size="default" :disabled="selectIdArr.length ? false : true" @click="deleteSelectUser">批量删除</el-button>
     <!-- table展示用户信息 -->
-    <el-table @selection-change="selectChange" style="margin: 10px 0px" border :data="userArr">
+    <el-table @selection-change="selectChange" style="margin: 10px 0" border :data="userArr">
       <el-table-column type="selection" align="center"></el-table-column>
       <el-table-column label="#" align="center" type="index"></el-table-column>
       <el-table-column label="ID" align="center" prop="id"></el-table-column>
@@ -347,7 +347,7 @@ const reset = () => {
 <style scoped>
 .form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 </style>

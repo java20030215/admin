@@ -35,9 +35,9 @@ let userStore = useUserStore();
     margin-left: 20px;
 
     .title {
+      margin-bottom: 30px;
       font-size: 30px;
       font-weight: 900;
-      margin-bottom: 30px;
     }
 
     .subtitle {
@@ -46,9 +46,10 @@ let userStore = useUserStore();
     }
   }
 }
+
 .bottoms {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 </style>

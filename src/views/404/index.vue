@@ -15,15 +15,17 @@ const goHome = () => {
 
 <style scoped lang="scss">
 .box {
+  display: flex;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background: yellowgreen;
-  display: flex;
-  justify-content: center;
+
   img {
     width: 800px;
     height: 400px;
   }
+
   button {
     width: 50px;
     height: 50px;
